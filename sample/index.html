@@ -1,0 +1,552 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>jQuery json-tree</title>
+    <meta charset="utf-8" />
+    <link href="../src/css/jquery.json-tree.css" type="text/css" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+        margin: 0 100px;
+        font-family: sans-serif;
+        }
+        p.options label {
+        margin-right: 10px;
+        }
+        p.options input[type=checkbox] {
+        vertical-align: middle;
+        }
+        textarea#json-input {
+        width: 100%;
+        height: 200px;
+        }
+        pre#json-renderer {
+        border: 1px solid #aaa;
+        }
+    </style>
+  </head>
+  <body>
+    <h1><a href="https://github.com/tecnocode-sa/json-tree">jQuery json-tree</a></h1>
+    <textarea id="json-input" autocomplete="off">
+        {"RESULTADO": {
+            "TIENE_JUI_QUI_EJEC": {"row": {"tiene_juicio": "NO"}},
+            "tipo_poblacion_": {"row": {"tipo_poblacion": "FUERTE"}},
+            "empl_domestico_": {"row": {
+                "cuit_empleador": 20876543215,
+                "apenom_domestico": "EJEMPLO PRUEBAS ERRORES",
+                "sexo_empleador": "M",
+                "fecha_nac_empleador": "22/12/1919",
+                "apenom_empleador": "EJEMPLO PRUEBAS ERRORES EMPLEADOR",
+                "doc_domestico": 87654321,
+                "fecha_nac_domestico": "01/01/1988",
+                "periodo": 201904,
+                "doc_empleador": 87654321,
+                "cuil_domestico": 20876543215,
+                "sexo_domestico": "M"
+            }},
+            "automotores": {"row": [
+                {
+                    "modelo_auto": "03/08/2016",
+                    "dominio": "QAA367XR"
+                },
+                {
+                    "modelo_auto": "03/08/2016",
+                    "dominio": "QAA367XP"
+                },
+                {
+                    "modelo_auto": "14/04/2016",
+                    "dominio": "QAA005EV"
+                },
+                {
+                    "modelo_auto": "01/04/2016",
+                    "dominio": "QAA003WB"
+                },
+                {
+                    "modelo_auto": "01/04/2016",
+                    "dominio": "QAA003HD"
+                },
+                {
+                    "modelo_auto": "23/09/2015",
+                    "dominio": "QPFP707"
+                },
+                {
+                    "modelo_auto": "23/04/2015",
+                    "dominio": "QOOK570"
+                },
+                {
+                    "modelo_auto": "30/04/2014",
+                    "dominio": "QNVQ559"
+                },
+                {
+                    "modelo_auto": "30/04/2014",
+                    "dominio": "QNVQ558"
+                },
+                {
+                    "modelo_auto": "23/01/2013",
+                    "dominio": "QLXD070"
+                },
+                {
+                    "modelo_auto": "23/03/2012",
+                    "dominio": "QLBF675"
+                },
+                {
+                    "modelo_auto": "30/01/2012",
+                    "dominio": "QKWN259"
+                },
+                {
+                    "modelo_auto": "01/01/2012",
+                    "dominio": "QLMI646"
+                },
+                {
+                    "modelo_auto": "01/01/2012",
+                    "dominio": "QLKR772"
+                },
+                {
+                    "modelo_auto": "01/01/2012",
+                    "dominio": "QLKR774"
+                },
+                {
+                    "modelo_auto": "01/01/2012",
+                    "dominio": "QLKR773"
+                },
+                {
+                    "modelo_auto": "23/11/2011",
+                    "dominio": "QKPJ787"
+                },
+                {
+                    "modelo_auto": "26/10/2011",
+                    "dominio": "QKKV496"
+                },
+                {
+                    "modelo_auto": "23/10/2007",
+                    "dominio": "QGSN306"
+                },
+                {
+                    "modelo_auto": "11/09/2002",
+                    "dominio": "QDZT828"
+                },
+                {
+                    "modelo_auto": "07/01/1998",
+                    "dominio": "QBTC009"
+                },
+                {
+                    "modelo_auto": "11/08/1997",
+                    "dominio": "QBNA913"
+                },
+                {
+                    "modelo_auto": "02/10/1986",
+                    "dominio": "QRPW233"
+                },
+                {
+                    "modelo_auto": "01/12/1981",
+                    "dominio": "QTPC515"
+                },
+                {
+                    "modelo_auto": "12/04/1977",
+                    "dominio": "QXAE068"
+                },
+                {
+                    "modelo_auto": "05/03/1976",
+                    "dominio": "QXHB731"
+                },
+                {
+                    "modelo_auto": "10/09/1971",
+                    "dominio": "QXBI402"
+                },
+                {
+                    "modelo_auto": "31/10/1969",
+                    "dominio": "QTAN253"
+                },
+                {
+                    "modelo_auto": "08/10/1969",
+                    "dominio": "QXMB968"
+                },
+                {
+                    "modelo_auto": "30/09/1969",
+                    "dominio": "QSCU125"
+                },
+                {"dominio": "QJPC755"}
+            ]},
+            "DEUDA_SISTEMA_FINANCIERO_6M": {"row": {
+                "monto_maximo": 0,
+                "fecha": "27/08/2019",
+                "situacion": 0,
+                "deuda_actual": 0,
+                "entidad": ""
+            }},
+            "DEUDA_SISTEMA_FINANCIERO_24M": {"row": {
+                "monto_maximo": 0,
+                "fecha": "27/08/2019",
+                "situacion": 0,
+                "deuda_actual": 0,
+                "entidad": ""
+            }},
+            "EMAILS": {"row": {"email": "LINKINLINKIN@GMAIL.COM"}},
+            "Telef_2_": {"row": [
+                {"telefono": "(0351)-421-0521"},
+                {"telefono": "(0351)-421-0522"}
+            ]},
+            "Juicios_Posee_Inhabilitacion": {"row": {"juicios_posee_tipo": 0}},
+            "inf_lab_hist_fecha_": {"row": [
+                {
+                    "relacion_hasta_": "01/03/2012",
+                    "inf_lab_cuit_": 30590360763,
+                    "inf_lab_razon_": "CENCOSUD S.A.",
+                    "relacion_desde_": "01/01/2011"
+                },
+                {
+                    "relacion_hasta_": "01/03/2017",
+                    "inf_lab_cuit_": 30999032083,
+                    "inf_lab_razon_": "BANCO DE LA CIUDAD DE BUENOS AIRES",
+                    "relacion_desde_": "01/05/2012"
+                }
+            ]},
+            "Tipo_Actividad": {"row": {"tipo_actividad": "JUBILADO"}},
+            "CONSULTADO_POR_": {"row": [
+                {
+                    "fecha": "26/12/2013",
+                    "consultante": "MCS -  DIAZ, GABRIEL ALBERTO"
+                },
+                {
+                    "fecha": "03/05/2017",
+                    "consultante": "CENCOSUD - USUARIO TRANSACCIONAL"
+                },
+                {
+                    "fecha": "18/05/2017",
+                    "consultante": "PRACTICO"
+                },
+                {
+                    "fecha": "21/07/2017",
+                    "consultante": "USUARIO TRANSACCIONAL - RAPICUOTAS"
+                },
+                {
+                    "fecha": "07/02/2018",
+                    "consultante": "CENCOSUD - USUARIO TRANSACCIONAL"
+                },
+                {
+                    "fecha": "09/04/2018",
+                    "consultante": "PRACTICO"
+                },
+                {
+                    "fecha": "05/06/2018",
+                    "consultante": "AFLUENTA"
+                },
+                {
+                    "fecha": "07/11/2018",
+                    "consultante": "Usuario Consultas EPEC"
+                },
+                {
+                    "fecha": "21/11/2018",
+                    "consultante": "FLEXFINTECH"
+                },
+                {
+                    "fecha": "15/07/2019",
+                    "consultante": "PRACTICO"
+                }
+            ]},
+            "Juicios_Posee_Embargo": {"row": {"juicios_posee_tipo": 0}},
+            "Celulares_": {"row": [
+                {
+                    "fecha_activacion": "30/11/2007",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1132532318
+                },
+                {
+                    "fecha_activacion": "30/11/2007",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1132532385
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133103378
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133144721
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133153898
+                },
+                {
+                    "fecha_activacion": "18/05/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133173591
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133194243
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133249394
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133341116
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133358153
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133590443
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1133648551
+                },
+                {
+                    "fecha_activacion": "23/09/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137874055
+                },
+                {
+                    "fecha_activacion": "24/04/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137899544
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970031
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970387
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970401
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970483
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970543
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970567
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970596
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970653
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970654
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970688
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970699
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970720
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970813
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970833
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970885
+                },
+                {
+                    "fecha_activacion": "03/12/2009",
+                    "cuit": "",
+                    "empresa": "CLARO",
+                    "documento": 87654321,
+                    "celular": 1137970914
+                }
+            ]},
+            "empleador_domestico_": {"row": {
+                "cuit_empleador": 20876543215,
+                "apenom_domestico": "EJEMPLO PRUEBAS ERRORES",
+                "sexo_empleador": "M",
+                "fecha_nac_empleador": "22/12/1919",
+                "apenom_empleador": "EJEMPLO PRUEBAS ERRORES EMPLEADOR",
+                "doc_domestico": 87654321,
+                "fecha_nac_domestico": "01/01/1988",
+                "periodo": 201904,
+                "doc_empleador": 87654321,
+                "cuil_domestico": 20876543215,
+                "sexo_domestico": "M"
+            }},
+            "tipo_empleador": {"row": {"tipo_empleador": ""}},
+            "cant_entidades_opera_24_meses": {"row": {"cantidad_entidades": 0}},
+            "Existencia_Fisica_Resu": {"row": {
+                "localidad": "CORDOBA",
+                "fallecido": "NO",
+                "ape_nom": "EJEMPLO PRUEBAS ERRORES",
+                "codigo_postal": 5000,
+                "provincia": "CORDOBA",
+                "t_docu": "DNI",
+                "nume_docu": 87654321,
+                "fecha_nacimiento": "01/01/1988",
+                "direc_calle": "ARRUABARRENA 1860",
+                "cdi": 20876543215,
+                "apellido_materno": "",
+                "edad": 31,
+                "clase": 1988
+            }},
+            "CONSTANCIA_DE_INSCRIPCION_AFIP": {"row": {
+                "localidad": "CORDOBA",
+                "direccion": "PASAJE ESCUTIL 955 - BARRIO : GUEMES",
+                "categoria": "I",
+                "cp": 5000,
+                "denominacion": "EJEMPLO PRUEBAS ERRORES",
+                "cuit": 20876543215,
+                "fecha_inicio_actividades": "01/01/2012",
+                "descripcion": "DOMICILIO FISCAL",
+                "provincia": "CORDOBA",
+                "antiguedad_meses": 0,
+                "mes_cierre": 12,
+                "fecha_contrato_social": ""
+            }},
+            "DEUDA_SISTEMA_FINANCIERO_12M": {"row": {
+                "monto_maximo": 0,
+                "fecha": "27/08/2019",
+                "situacion": 0,
+                "deuda_actual": 0,
+                "entidad": ""
+            }},
+            "cant_entidades_opera_irregular": {"row": {"cantidad": 0}},
+            "Score": {"row": {"score": 10}},
+            "predictor_ingreso": {"row": {"predictor_ingresos": "R01"}},
+            "Moviles_posee": {"row": {
+                "posee_autos": "SI",
+                "cantidad_autos": 31
+            }}
+        }}
+    </textarea>
+
+    <button id="btn-json-viewer" title="run jsonViewer()">Transform to HTML</button>
+    <pre id="json-renderer"></pre>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../src/js/jquery.json-tree.js"></script>
+    <script>
+        $(function() {
+            function renderJson() {
+                try {
+                var input = eval('(' + $('#json-input').val() + ')');
+                }
+                catch (error) {
+                return alert("Cannot eval JSON: " + error);
+                }
+                var options = {
+                collapsed: false,
+                rootCollapsable: true,
+                withQuotes: false,
+                withLinks: true
+                };
+                $('#json-renderer').jsonViewer(input, options);
+            }
+
+            // Generate on click
+            $('#btn-json-viewer').click(renderJson);
+
+            // Display JSON sample on page load
+            renderJson();
+        });
+    </script>
+  </body>
+</html>
